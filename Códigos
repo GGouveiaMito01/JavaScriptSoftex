@@ -1,0 +1,21 @@
+//1. uma função tradicional com a palavra reservada “Function” e sem nenhum parâmetro;
+function bemvindo() {
+    console.log("Seja Bem vindo George Gouveia.")
+}
+bemvindo();
+
+//2. uma função tradicional com parâmetros e um retorno de valor;
+function parimpar(n) {
+    if (n % 2 == 0) {
+        return 'Par'
+    } else {
+        return 'Impar'
+    }
+}
+let resultado = parimpar(10)
+console.log(resultado)
+
+//3. uma arrow function com parâmetros e que retorne um valor.
+const somar = (a, b) => a + b;
+console.log(somar(10, 5))
+
