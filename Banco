@@ -1,0 +1,57 @@
+function  consultarSaldo ( saldo )  {
+    alert ( `Seu saldo atual é de R$ ${ saldo } ` ) ;
+}
+
+function  realizarDeposito ( saldo ,  deposito )  {
+    saldo  +=  parseFloat ( depósito ) ;
+    alert ( 'Depósito realizado com sucesso!' ) ;
+    return  saldo ;
+}
+
+function  realizarSaque ( saldo ,  saque )  {
+    saque  =  parseFloat ( saque ) ;
+
+    if  ( saque  >  saldo )  {
+        alert ( 'Não é possível realizar o saque' ) ;
+        return  saldo ;
+    }
+
+    saldo  -=  saque ;
+    alert ( 'Saque realizado com sucesso!' ) ;
+    return  saldo ;
+}
+
+function  banco ( )  {
+    var  op  =  indefinido ;
+    var  saldo  =  0,00 ;
+
+    fazer  {
+        op  =  prompt ( 'Qual operação deseja fazer?\n1 - Consultar Saldo\n2 - Realizar Saque\n3 - Realizar Depósito\n4 - Sair' ) ;
+        
+        if  ( op  ==  null  ||  op  ==  "" )  {
+            quebrar ;  // Se cancelar o prompt o usuário sai do sistema
+        }
+
+        interruptor  ( op )  {
+            caso  '1' 
+                consultarSaldo ( saldo ) ;
+                quebrar ;
+            caso  '2' 
+                var  saque  =  prompt ( 'Qual valor deseja sacar?' ) ;
+                saldo  =  realizarSaque ( saldo ,  saque ) ;
+                quebrar ;
+            caso  '3' 
+                var  deposito  =  prompt ( 'Qual valor deseja depositar?' ) ;
+                saldo  =  realizarDeposito ( saldo ,  deposito ) ;
+                quebrar ;
+            caso  '4' 
+                alert ( 'Saindo do sistema...' ) ;
+                quebrar ;
+            padrão :
+                alert ( 'Opção não existente.' ) ;
+        }
+
+    }  while  ( op  !=  4 ) ;
+}
+
+banco ( ) ;
